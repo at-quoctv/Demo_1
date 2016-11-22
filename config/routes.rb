@@ -10,6 +10,18 @@
     post '/signup',  to: 'users#create'
     delete 'logout', to:'sessions#destroy'
     get '/edit', to:'users#edit'
-    # get '/profile', to:'users$profile'
-    resources :users
+    get '/search', to: 'users#index'
+
+    get '/entry', to: 'demo_pages#entry'
+    get '/show', to: 'demo_pages#show'
+    
+    get '/comment', to: 'comments#index'
+    resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+    resources :microposts
+    resources :relationships, only: [:create, :destroy]
+    resources :comments
   end

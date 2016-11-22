@@ -1,0 +1,11 @@
+   <%= will_paginate @comment %>
+ <% if @comment.any?%>
+   <% @comment.each do |comment| %>
+     <h5>comment by:<%= comment.user.name%></h5>
+     <h6><%= comment.created_at%> </h6>
+     <h5><%= comment.content%> </h5>
+   <% end %> 
+    <%else%>
+   <p>ko co comment nao</p>
+<%end%>
+  <%= will_paginate @comment %>
