@@ -334,3 +334,30 @@ span.picture {
 .users.follow {
   padding: 0;
 }
+
+
+.boder {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    width: 750px;
+    border-radius: 15px 50px;
+    margin :10px;
+}
+
+.boder_comment {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    width: 750px;
+    border-radius: 25px;
+    margin :10px;
+}
+
+.messages{
+   border: 2px solid #a1a1a1;
+   color :red;
+   background: #dddddd;
+   width: 350px;
+   padding: 10px 40px;
+}

@@ -1,3 +1,4 @@
+<div class="boder">
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
@@ -10,6 +11,7 @@
         <% if current_user?(micropost.user) %>
       <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
+                                       <i class="glyphicon glyphicon-trash"></i>
     <% end %>
   </span>
  
@@ -27,5 +29,4 @@
 
 </li>
 
- 
-
+</div>
