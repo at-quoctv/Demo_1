@@ -7,4 +7,12 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :content, presence: true, length: { maximum: 140,minimum: 3 } 
   self.per_page =10
+
+   def self.search(pattern)
+    if pattern.blank? 
+      all
+    else
+      where('content or title  LIKE ?', "%#{pattern}%")
+    end
+  end
 end

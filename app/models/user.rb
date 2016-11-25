@@ -17,7 +17,7 @@
                     uniqueness: { case_sensitive: false }  
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+   self.per_page =15
      # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -69,12 +69,11 @@
   def following?(other_user)
     following.include?(other_user)
   end
-  def self.search(search)
-  if search
-     @users = User.where("name like ?", "%#{@search}%")
-    # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  else
-    # find(:all)
+ def self.search(pattern)
+    if pattern.blank? 
+      all
+    else
+      where('name LIKE ?', "%#{pattern}%")
+    end
   end
-end
   end

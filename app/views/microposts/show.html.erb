@@ -9,17 +9,20 @@
         <%= form_for Comment.new  do |f| %>
       
           <%= render 'shared/error_messages', object: f.object %>
-            <div>
+           
               <%= f.label :content, 'Enter your comment:' %>
-              <%= f.text_area :content,class: 'form-control'  %>
+              <%= f.text_area :content,class:'form-control'  %>
               <%= f.hidden_field :micropost_id, value: @micropost.id %>
               <small class="label label-warning">Cannot be blank</small>
-            </div>
               <%= f.submit 'Submit', class: "btn btn-primary" %>
        <% end %>
      </div>
     </div>
     <%= render 'show_comment' %>
-     <% else%>
+ <% else%>
+     <h5>created by:<%=@micropost.user.name%></h5>
+    <h6>created_at:<%= @micropost.created_at %></h6>
+    <h1><%= @micropost.title %></h1>
+    <h2><%= @micropost.content %></h2>
        <%= render 'show_comment' %>
-     <%end %>
+  <%end %>

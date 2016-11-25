@@ -12,8 +12,11 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   def show
+
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+
+    
   end
 
   def show_comment
@@ -40,8 +43,9 @@ class UsersController < ApplicationController
   end
 
   def index
+   
      @users = User.paginate(page: params[:page])
-     @search = User.search(params[:search])
+     @search = User.search(params[:search]).paginate(page: params[:page])
   end
 
    def edit
