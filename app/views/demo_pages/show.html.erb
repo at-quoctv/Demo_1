@@ -1,11 +1,5 @@
 <h1>All entries</h1>
- <%= form_tag show_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] ,class:"form-control input-sm " %>  
-    <span class="glyphicon glyphicon-search"></span>
-    <%= submit_tag "Search", :name => nil ,class:"btn_search btn-primary "%>
-  </p>
-<% end %>
+ 
 
 <%= will_paginate @micropost %>
   <ul class="users">
