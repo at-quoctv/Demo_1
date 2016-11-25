@@ -3,9 +3,9 @@
  <% if @comment.any?%>
    <% @comment.each do |comment| %>
    <div class="boder_comment">
-     <h5>comment by:<%= comment.user.name%></h5>
-     <h6>created_at:<%= comment.created_at%> </h6>
-     <h5><%= comment.content%> </h5>
+     <h3><%= comment.content%> </h3>
+     <h6><b>comment by:</b><%= comment.user.name%></h6>
+     <h6><b>created_at:</b><%= comment.created_at%> </h6>
      </div>
    <% end %> 
     <%else%>
