@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def index
    
      @users = User.paginate(page: params[:page])
-     @search = User.search(params[:search]).paginate(page: params[:page])
+     @search = User.search(params[:search])
   end
 
    def edit
