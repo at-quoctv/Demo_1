@@ -73,7 +73,7 @@
     if pattern.blank? 
       all
     else
-      where('name LIKE ?', "%#{pattern}%")
+      where('name or email LIKE ?', "%#{pattern}%")
     end
   end
   end
